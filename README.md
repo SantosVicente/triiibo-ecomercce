@@ -26,7 +26,7 @@ triiibo-ecomercce é um repositório para o projeto de um e-commerce de Engenhar
 Equipe/Responsável:
 
 - Nome: Ana Beatriz Mendes São Pedro Digrocco - ana.digrocco@aluno.cps.sp.gov.br
-- Nome:
-- Nome:
+- Nome: Eros de Lacerda Quadros - eros.quadros@aluno.cps.sp.gov.br
+- Nome: Paulo Eduardo Ferreira Junior - paulo.ferreira4@aluno.cps.sp.gov.br
 - Nome: Vicente dos Santos Silva - vicente.silva2@aluno.cps.sp.gov.br
-- Nome:
+- Nome: Vicente Matheus Collin Pedroso - vicente.pedroso@aluno.cps.sp.gov.br
