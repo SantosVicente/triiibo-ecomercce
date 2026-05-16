@@ -8,6 +8,7 @@ triiibo-ecomercce é um repositório para o projeto de um e-commerce de Engenhar
 
 - [README.md](README.md)
 - [METRICS.md](METRICS.md) — métricas de estimativa, progresso, qualidade e escopo.
+- [PROPOSTA-DE-CONFIGURACAO-DE-SISTEMA.md](PROPOSTA-DE-CONFIGURACAO-DE-SISTEMA.md) — decisões técnicas, stack, infraestrutura e CI/CD.
 - `docs/` — documentação complementar, requisitos, narrativas e plano de testes.
 - `design/` — diagramas (UML, casos de uso), wireframes e arquivos do Figma/Draw.io.
 
