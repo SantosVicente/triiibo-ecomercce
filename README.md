@@ -6,12 +6,9 @@ triiibo-ecomercce é um repositório para o projeto de um e-commerce de Engenhar
 
 ## Arquivos e pastas (atuais e previstas)
 
-- **Atuais:**
-  - [README.md](README.md)
-
-- **Previstos:**
-  - `docs/` — documentação complementar, requisitos, narrativas e plano de testes.
-  - `design/` — diagramas (UML, casos de uso), wireframes e arquivos do Figma/Draw.io.
+- [README.md](README.md)
+- `docs/` — documentação complementar, requisitos, narrativas e plano de testes.
+- `design/` — diagramas (UML, casos de uso), wireframes e arquivos do Figma/Draw.io.
 
 ## Contato
 
