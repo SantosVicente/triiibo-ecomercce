@@ -18,11 +18,11 @@ Use o link acima para navegar entre fluxos, estados e interações que não est�
 
 | # | Tela | Arquivo | Descrição |
 |---|------|---------|-----------|
-| 1 | Dashboard | `E-COMMERCE_ Dashboard.jpg` | Área administrativa com menu lateral, resumo financeiro e navegação principal |
-| 2 | Catálogo | `E-COMMERCE_ Catálogo.jpg` | Listagem de produtos com filtros laterais, ordenação e grid |
-| 3 | Adicionar ao carrinho | `E-COMMERCE_ Add to Cart.png` | Modal de quick view / adicionar produto com seletor de quantidade |
-| 4 | Visualizar pedido | `E-COMMERCE_ Visualizar Pedido.jpg` | Detalhes do pedido, barra de progresso e resumo dos itens |
-| 5 | Página não encontrada | `E-COMMERCE_ Not Found.jpg` | Erro 404 com mensagem amigável e retorno ao início |
+| 1 | Dashboard | `imgs/E-COMMERCE_ Dashboard.jpg` | Área administrativa com menu lateral, resumo financeiro e navegação principal |
+| 2 | Catálogo | `imgs/E-COMMERCE_ Catálogo.jpg` | Listagem de produtos com filtros laterais, ordenação e grid |
+| 3 | Adicionar ao carrinho | `imgs/E-COMMERCE_ Add to Cart.png` | Modal de quick view / adicionar produto com seletor de quantidade |
+| 4 | Visualizar pedido | `imgs/E-COMMERCE_ Visualizar Pedido.jpg` | Detalhes do pedido, barra de progresso e resumo dos itens |
+| 5 | Página não encontrada | `imgs/E-COMMERCE_ Not Found.jpg` | Erro 404 com mensagem amigável e retorno ao início |
 
 ---
 
@@ -30,7 +30,7 @@ Use o link acima para navegar entre fluxos, estados e interações que não est�
 
 ### 1. Dashboard
 
-![Dashboard do e-commerce Triiibo](./E-COMMERCE_%20Dashboard.jpg)
+![Dashboard do e-commerce Triiibo](imgs/E-COMMERCE_%20Dashboard.jpg)
 
 Área administrativa do cliente com menu lateral, indicadores financeiros e identidade visual da marca (vermelho e tons terrosos).
 
@@ -38,7 +38,7 @@ Use o link acima para navegar entre fluxos, estados e interações que não est�
 
 ### 2. Catálogo
 
-![Catálogo de produtos](./E-COMMERCE_%20Catálogo.jpg)
+![Catálogo de produtos](imgs/E-COMMERCE_%20Cat%C3%A1logo.jpg)
 
 Página principal de compra: busca, filtros na barra lateral, grid de produtos e cards com informações essenciais.
 
@@ -46,7 +46,7 @@ Página principal de compra: busca, filtros na barra lateral, grid de produtos e
 
 ### 3. Adicionar produto ao carrinho (Quick View)
 
-![Modal adicionar ao carrinho](./E-COMMERCE_%20Add%20to%20Cart.png)
+![Modal adicionar ao carrinho](imgs/E-COMMERCE_%20Add%20to%20Cart.png)
 
 Modal para visualização rápida do produto, ajuste de quantidade e inclusão na sacola sem sair do catálogo.
 
@@ -54,7 +54,7 @@ Modal para visualização rápida do produto, ajuste de quantidade e inclusão n
 
 ### 4. Visualizar pedido
 
-![Detalhes e acompanhamento do pedido](./E-COMMERCE_%20Visualizar%20Pedido.jpg)
+![Detalhes e acompanhamento do pedido](imgs/E-COMMERCE_%20Visualizar%20Pedido.jpg)
 
 Tela de acompanhamento com barra de progresso linear, resumo visual dos itens e dados de entrega e pagamento.
 
@@ -62,7 +62,7 @@ Tela de acompanhamento com barra de progresso linear, resumo visual dos itens e 
 
 ### 5. Página não encontrada (404)
 
-![Página 404](./E-COMMERCE_%20Not%20Found.jpg)
+![Página 404](imgs/E-COMMERCE_%20Not%20Found.jpg)
 
 Estado de erro para URLs inexistentes ou links quebrados, com orientação clara e ação de recuperação.
 
