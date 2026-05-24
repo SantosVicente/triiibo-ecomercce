@@ -20,6 +20,7 @@ triiibo-ecomercce é um repositório para o projeto de um e-commerce de Engenhar
 - [Jira](https://vicentedossantos.atlassian.net/?continue=https%3A%2F%2Fvicentedossantos.atlassian.net%2Fwelcome%2Fsoftware%3FprojectId%3D10000&atlOrigin=eyJpIjoiZWJmNmFhYjAzMTBlNGNmOWEzNTZkYmNiNjcyYTc5NGIiLCJwIjoiamlyYS1zb2Z0d2FyZSJ9)
 - [Figma](https://www.figma.com/design/VyLzHtJWcumPCNogXmenlr/Triiibo---Design?node-id=0-1&t=gW2blgxhf4oXjQkn-1)
 - [Figma Protótipo](https://www.figma.com/proto/VyLzHtJWcumPCNogXmenlr/Triiibo---Design?node-id=33-1079&p=f&t=f78iASD8R5rnfoDu-1&scaling=min-zoom&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=33%3A1079)
+- [Diagrama de Casos de Uso](https://drive.google.com/file/d/1HVNJ6h-O2nESfD3H_4Kwl1bMKNXlYY7Y/view?usp=sharing)
 - [Tutorial de Pontos de Função](https://www.devmedia.com.br/contagem-de-pontos-de-funcao/34390)
 
 ## Contato

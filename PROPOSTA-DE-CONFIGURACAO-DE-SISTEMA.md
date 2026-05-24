@@ -2,110 +2,111 @@
 
 ## Visão geral
 
-Proposta inicial alinhada à stack e requisitos solicitados: backend em NestJS, frontend com Vite + React, padronização em TypeScript, infraestrutura gerenciada via Terraform na AWS, e pipelines de CI/CD em GitHub Actions.
+Esta proposta organiza uma base simples para o sistema, com frontend, backend, banco de dados e infraestrutura em nuvem. A ideia é deixar claro quais tecnologias serão usadas e como o projeto será separado por ambientes.
 
 ## Objetivos
 
-- Estabelecer decisões técnicas claras para implementação inicial.
-- Garantir práticas de alta qualidade (tests, observability, segurança).
-- Criar base reprodutível com IaC (Terraform) e imagens Docker.
+- Definir uma base inicial clara para o projeto.
+- Organizar as tecnologias principais que serão usadas.
+- Separar o sistema em ambientes de teste e produção.
+- Manter uma estrutura fácil de entender e evoluir.
 
 ## Escopo
 
-- Frontend (Vite + React + TypeScript)
-- Backend (NestJS + TypeScript)
-- Banco de dados relacional (PostgreSQL em RDS)
-- Cache (Redis)
-- Armazenamento de objetos (S3)
-- Integrações externas: Stripe (pagamentos), ViaCEP (CEP), serviço de e-mail (SES/SendGrid)
-- Pipelines de CI/CD com GitHub Actions (YAML)
-- Ambientes: `staging` e `production` apenas
+- Frontend com Vite + React + TypeScript
+- Backend com NestJS + TypeScript
+- Banco de dados PostgreSQL
+- Cache com Redis
+- Armazenamento de arquivos com S3
+- Integrações externas como Stripe, ViaCEP e serviço de e-mail
+- Automação com GitHub Actions
+- Ambientes: `staging` e `production`
 
 ## Stack e escolhas principais
 
-- Backend: `NestJS` (TypeScript, modular, testes com Jest)
-- Frontend: `Vite` + `React` + `TypeScript` (Vitest + React Testing Library para testes unitarios e Playwright para E2E)
-- ORM/DB access: `Prisma`
-- Cache: `Redis` (sessions, caches, rate limits)
-- Storage: `S3` (assets e backups de arquivos)
-- Containerização: `Docker` para imagens reproducíveis
-- IaC: `Terraform` para provisão na AWS
-- CI/CD: `GitHub Actions` com workflows em YAML
+- Backend: `NestJS`
+- Frontend: `Vite` + `React` + `TypeScript`
+- Banco de dados: `PostgreSQL`
+- ORM: `Prisma`
+- Cache: `Redis`
+- Storage: `S3`
+- Containerização: `Docker`
+- Nuvem: `AWS`
+- Automação: `GitHub Actions`
 
 ## Controle de versão e fluxo de trabalho
 
-- Branching: `main` (produção) + branches de feature. Uso de tags para releases.
-- Política de merge: rebase + fast-forward para manter histórico linear.
-- Pull requests obrigatórios com revisão e checks (lint, tests unitários)
+- Branch principal: `main`
+- Criação de branches para novas funcionalidades
+- Uso de pull requests para revisão antes de juntar mudanças
+- Tags para marcar versões importantes
 
-## Infraestrutura na AWS (alto nível)
+## Infraestrutura na AWS
 
-- Rede: VPC com subnets públicas/privadas
-- CDN: `CloudFront` para frontend estático (S3 origin)
-- Backend: imagens Docker rodando em `EC2` (ou ECS/EKS se for necessário evoluir)
-- Balanceamento: `ALB` (Application Load Balancer) na frente das instâncias
-- Banco: `RDS PostgreSQL` (multi-AZ para produção)
-- Cache: `ElastiCache Redis`
-- Armazenamento: `S3` (artefatos, uploads)
-- Secrets: `AWS Secrets Manager` ou `SSM Parameter Store`
-- Observability: CloudWatch + integração a Grafana/Prometheus/OTel se necessário
+- Uso da AWS para hospedar a aplicação
+- Frontend em um serviço de arquivos estáticos, com distribuição global quando necessário
+- Backend em servidores ou containers na nuvem
+- Banco de dados PostgreSQL gerenciado
+- Cache Redis gerenciado
+- Armazenamento de arquivos no S3
+- Controle de segredos com serviços da AWS
+- Monitoramento básico com CloudWatch
 
 ## CI/CD (GitHub Actions)
 
-- Workflows em YAML para:
-  - `push` em `main` → build + tests → deploy para `production` (controlado por tags/semver)
-  - `pull_request` → build + lint + tests → deploy preview para `staging` (opcional)
-  - `workflow_dispatch` para deploy manual
-- Jobs recomendados: `lint`, `build`, `unit tests`, `e2e tests`, `image build` (Docker), `push image to registry`, `terraform plan/apply` (com aprovações para prod)
+- Uso de fluxos automáticos para validar o projeto utilizando a metodologia Trunk Based Development
+- Em pull requests, rodar build e testes
+- Em `main`, preparar a publicação da versão final
+- Possibilidade de deploy manual quando necessário
 
 ## Testes
 
-- Unitários: `Vitest`/`React Testing Library` no frontend e `Vitest` no backend
-- Integration: testes em banco local/containers (Postgres em Docker)
-- E2E: `Playwright` rodando contra `staging` (pipeline separado)
+- Testes unitários no frontend e no backend
+- Testes de interação entre componentes e serviços no frontend e backend (e2e)
+- Testes de integração front-back com banco local quando necessário
+- Testes manuais de ponta a ponta em ambiente de staging
 
 ## Integrações e serviços externos
 
-- Pagamentos: `Stripe` (webhooks, segurança, idempotency)
-- CEP: `ViaCEP` (API pública amplamente usada no Brasil)
-- E-mail: `Amazon SES` (integração nativa com AWS) ou `SendGrid` (se preferir serviço independente)
-- Cache/Session: `Redis` (ElastiCache em produção)
-- Armazenamento de arquivos: `S3` para uploads e assets estáticos
-- Fila de mensagens (opcional): RabbitMQ ou Kafka para tarefas assíncronas (e.g., envio de e-mails, processamento de pedidos)
+- Pagamentos com Stripe
+- Consulta de CEP com ViaCEP
+- Envio de e-mails com Amazon SES ou SendGrid
+- Armazenamento de arquivos com S3
+- Uso de Redis para apoio em cache e sessão
 
-## Observability e monitoramento
+## Observabilidade e monitoramento
 
-- Logs centralizados em CloudWatch + export para ELK/Grafana quando necessário
-- Métricas e alertas: CloudWatch Alarms / Grafana + Prometheus
+- Registro de logs para acompanhamento do sistema (auditable logs)
+- Métricas básicas para identificar erros e instabilidades
+- Alertas simples para situações importantes
 
 ## Segurança
 
-- HTTPS obrigatório (CloudFront + certificado ACM)
-- Gerenciamento de secrets: AWS Secrets Manager
-- Scans de segurança em CI (dependabot, Snyk/Trivy para imagens)
-- Políticas IAM com princípio de privilégios mínimos
+- Uso de HTTPS em todas as partes do sistema
+- Guarda de informações sensíveis em serviços seguros da AWS
+- Controle de acesso por permissões
+- Revisão básica de segurança nas rotinas de integração
 
 ## Backups e recuperação
 
-- Backups automáticos do RDS (snapshot daily) e retenção configurável
-- Versionamento de objetos em S3 para proteção contra deleções acidentais
-- Plano de recovery documentado com RTO/RPO esperados (definir valores)
+- Backups automáticos do banco de dados
+- Cópias de segurança dos arquivos importantes
+- Plano simples de recuperação em caso de falha
 
 ## Escalabilidade e resiliência
 
-- Serviços stateless em containers para escalar horizontalmente
-- Uso de Auto Scaling Groups para EC2
-- Estratégias de cache para reduzir latência e carga no banco
+- Estrutura preparada para crescer aos poucos
+- Possibilidade de aumentar recursos conforme a necessidade
+- Uso de cache para melhorar desempenho
 
 ## Boas práticas / libs recomendadas
 
-- Validação: `class-validator` + `class-transformer` (NestJS)
-- Config: `@nestjs/config` / env-schema para validação de variáveis de ambiente
-- Observability: `@opentelemetry/*`
-- ORM: `Prisma` (migrations, type-safe queries)
-- HTTP client: `fetch api` customizada com retries/circuit-breaker
+- Validação de dados com bibliotecas comuns do NestJS
+- Configuração por variáveis de ambiente
+- Uso do Prisma para acesso ao banco
+- Requisições HTTP com a API nativa do projeto
 
 ## Ambientes
 
-- `staging`: espelho controlado da produção (dados sanitizados)
-- `production`: multi-AZ, monitoramento e backups ativos
+- `staging`: ambiente para testes e validações
+- `production`: ambiente final para uso real

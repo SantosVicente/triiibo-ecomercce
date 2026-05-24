@@ -6,7 +6,7 @@ Este documento descreve as métricas adotadas para monitorar o progresso, qualid
 
 ## 📐 Tamanho Funcional — Pontos de Função
 
-O tamanho funcional do sistema foi estimado utilizando a metodologia **IFPUG Function Point Analysis**, considerando as entradas externas, saídas externas, consultas externas, arquivos lógicos internos e arquivos de interface externa.
+O tamanho funcional do sistema foi estimado utilizando a metodologia **Análise de Pontos de Função**, considerando as entradas externas, saídas externas, consultas externas, arquivos lógicos internos e arquivos de interface externa.
 
 | Métrica                               | Valor        |
 | ------------------------------------- | ------------ |
